@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40237cc68c41ae3409ca1563a33d2267, type: 3}
+  m_Name: ShopCategory_Factories
+  m_EditorClassIdentifier: Assembly-CSharp::Enaldinho.UI.ShopCategoryDataSO
+  id: category_factories
+  displayName: Factories
+  iconSprite: {fileID: 683590153409022503, guid: 52823a9d30ab9644c8ed90bcc652bf9f, type: 3}
+  artClass: art-factory
+  buildings:
+  - {fileID: 11400000, guid: 66da04a716cc40739dcf6eebc19723c5, type: 2}
+  - {fileID: 11400000, guid: c4ff89f070e84d48b5b203703b022ed7, type: 2}
+  - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}

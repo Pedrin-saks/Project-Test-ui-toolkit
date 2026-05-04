@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI%20Toolkit/Styles/shopping-category-card.uss?fileID=7433441132597879392&amp;guid=cde0c5ee3f3a0fa40a0b9a34835548f2&amp;type=3#shopping-category-card"/>
+    <ui:VisualElement name="CategoryCard" class="shopping-category-card">
+        <ui:VisualElement name="CardFrame" class="shopping-category-card__frame">
+            <ui:VisualElement name="CardIcon" class="shopping-category-card__icon"/>
+            <ui:VisualElement name="CardTitleImage" class="shopping-category-card__title-band">
+                <ui:Label name="CardTitleLabel" text="House" class="shopping-category-card__title"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

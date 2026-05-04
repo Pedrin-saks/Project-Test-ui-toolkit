@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48155f5f2c1c28e41b9c8e7eea2d51ae, type: 3}
+  m_Name: ShopDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::Enaldinho.UI.ShopDatabaseSO
+  softCurrencyDisplay: 120k
+  premiumCurrencyDisplay: 120k
+  categories:
+  - {fileID: 11400000, guid: 63f9d29c48ec4d15a41e4b5a0afcc782, type: 2}
+  - {fileID: 11400000, guid: 609d74c49b174a06b53da25c6dd791f4, type: 2}
+  - {fileID: 11400000, guid: d814460d98cb4674bf58f6caf3687f53, type: 2}
+  - {fileID: 11400000, guid: e0338dbe03d54e4aaf90bfdd394c5f67, type: 2}
+  - {fileID: 11400000, guid: ee97a60336154bfab6f62bc6023e263e, type: 2}
+  - {fileID: 11400000, guid: b010294c72274c809111dc7a17e73724, type: 2}

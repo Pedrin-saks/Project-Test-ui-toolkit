@@ -40,14 +40,14 @@
 .shopping-categories__title {
     flex-grow: 1;
     align-self: center;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/Baloo-Regular%20SDF.asset?fileID=11400000&guid=a9ccaf27b4dc44c4cad8b0e32b09e446&type=2#Baloo-Regular SDF");
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/Baloo-Regular.ttf?fileID=12800000&guid=df6fae99ef3376f4ba0c6157fc122b52&type=3#Baloo-Regular");
     -unity-font-style: bold;
     font-size: 60px;
     color: rgb(228, 221, 181);
     -unity-text-align: middle-center;
     -unity-text-outline-width: 2px;
     -unity-text-outline-color: rgba(101, 49, 35, 0.9);
-    text-shadow: 2px 12px 0 rgb(101, 49, 35);
+    text-shadow: 2px 5px 0 rgb(101, 49, 35);
     flex-shrink: 1;
 }
 
@@ -77,6 +77,12 @@
 }
 
 .shopping-categories__grid {
+    flex-grow: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .shopping-categories__back-button {

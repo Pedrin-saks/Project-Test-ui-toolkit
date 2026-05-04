@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40237cc68c41ae3409ca1563a33d2267, type: 3}
+  m_Name: ShopCategory_House
+  m_EditorClassIdentifier: Assembly-CSharp::Enaldinho.UI.ShopCategoryDataSO
+  id: category_house
+  displayName: House
+  iconSprite: {fileID: 7615573374394633779, guid: 8140f5abe0da5124cba84ca6ef88a013, type: 3}
+  artClass: art-house
+  buildings:
+  - {fileID: 11400000, guid: 133d4ec8d8f44cd68e07f2dcff27c041, type: 2}
+  - {fileID: 11400000, guid: 3f3d162618f44b9ba042817fda1fbd6b, type: 2}
+  - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}
+  - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}
+  - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}
+  - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}
+  - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}
+  - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}
