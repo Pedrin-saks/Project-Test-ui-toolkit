@@ -429,7 +429,7 @@ namespace Hierarchy2
 
             rowItem.Dispose();
             rowItem.ID = selectionID;
-            rowItem.gameObject = EditorUtility.InstanceIDToObject(rowItem.ID) as GameObject;
+            rowItem.gameObject = ResolveObjectFromInstanceId(rowItem.ID) as GameObject;
             rowItem.rect = selectionRect;
             rowItem.rowIndex = GetRowIndex(selectionRect);
             rowItem.isSelected = InSelection(selectionID);
@@ -444,7 +444,7 @@ namespace Hierarchy2
                 if (!(rowItem.isFolder = rowItem.hierarchyFolder))
                     rowItem.isSeparator = rowItem.name.StartsWith(settings.separatorStartWith);
 
-                rowItem.isDirty = EditorUtility.IsDirty(selectionID);
+                rowItem.isDirty = EditorUtility.IsDirty(rowItem.gameObject);
 
                 if (true && !rowItem.isSeparator && rowItem.isDirty)
                 {
@@ -1415,9 +1415,25 @@ namespace Hierarchy2
 
         int GetRowIndex(Rect rect) => (int) (rect.y / rect.height);
 
-        bool InSelection(int ID) => Selection.Contains(ID) ? true : false;
+        UnityEngine.Object ResolveObjectFromInstanceId(int instanceId)
+        {
+#pragma warning disable CS0618
+            var target = EditorUtility.InstanceIDToObject(instanceId);
+#pragma warning restore CS0618
+            return target != null ? EditorUtility.EntityIdToObject(target.GetEntityId()) : null;
+        }
 
-        bool IsElementDirty(int ID) => EditorUtility.IsDirty(ID);
+        bool InSelection(int ID)
+        {
+            var target = ResolveObjectFromInstanceId(ID);
+            return target != null && Selection.Contains(target);
+        }
+
+        bool IsElementDirty(int ID)
+        {
+            var target = ResolveObjectFromInstanceId(ID);
+            return target != null && EditorUtility.IsDirty(target);
+        }
 
         Rect RectFromRight(Rect rect, float width, float usedWidth)
         {
@@ -1540,11 +1556,11 @@ namespace Hierarchy2
                 // Debug.Log(string.Format("HierarchyWindow {0} Disposed.", instanceID));
             }
 
-            public TreeViewItem GetItemAndRowIndex(int id, out int row)
+            public TreeViewItem<int> GetItemAndRowIndex(int id, out int row)
             {
                 row = -1;
                 // if (treeview == null) return null;
-                // var item = GetItemAndRowIndexMethod.Invoke(treeview, new object[] {id, row}) as TreeViewItem;
+                // var item = GetItemAndRowIndexMethod.Invoke(treeview, new object[] {id, row}) as TreeViewItem<int>;
                 // return item;
                 return null;
             }
@@ -1759,10 +1775,10 @@ namespace Hierarchy2
 
             internal static GUIStyle TreeBoldLabel
             {
-                get { return UnityEditor.IMGUI.Controls.TreeView.DefaultStyles.boldLabel; }
+                get { return TreeView<int>.DefaultStyles.boldLabel; }
             }
 
-            internal static GUIStyle TreeLabel = new GUIStyle(UnityEditor.IMGUI.Controls.TreeView.DefaultStyles.label)
+            internal static GUIStyle TreeLabel = new GUIStyle(TreeView<int>.DefaultStyles.label)
             {
                 richText = true,
                 normal = new GUIStyleState() {textColor = Color.white}

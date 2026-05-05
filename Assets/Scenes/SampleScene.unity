@@ -410,7 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enaldinho.UI.ShopScreenController
   uiDocument: {fileID: 1313758793}
   database: {fileID: 11400000, guid: 9fbb6f5450ac4ffda8422eac43b7e266, type: 2}
-  categoryCardAsset: {fileID: 9197481963319205126, guid: 8121384220ef20740b11520b00efe73d, type: 3}
+  categoryCardAsset: {fileID: 9197481963319205126, guid: 09a3685311c7a86488283f54815768f1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

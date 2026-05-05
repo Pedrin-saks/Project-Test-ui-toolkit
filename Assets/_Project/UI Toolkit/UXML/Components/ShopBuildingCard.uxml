@@ -1,0 +1,27 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI%20Toolkit/Styles/Foundations/shopping-theme.uss?fileID=7433441132597879392&amp;guid=3bc091a4338cf6f4988ef16d9f8ed7a5&amp;type=3#shopping-theme"/>
+    <Style src="project://database/Assets/_Project/UI%20Toolkit/Styles/Components/shopping-building-card.uss?fileID=7433441132597879392&amp;guid=ecea9ac2e1cba4241bbe7f968b00431d&amp;type=3#shopping-building-card"/>
+    <ui:VisualElement name="BuildingCard" class="shopping-building-card">
+        <ui:VisualElement name="CardFrame" class="shopping-building-card__frame">
+            <ui:VisualElement name="CardTitleBar" class="shopping-building-card__title-bar">
+                <ui:Label name="CardTitleLabel" text="School" class="shopping-building-card__title"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="CardDivider" class="shopping-building-card__divider"/>
+            <ui:VisualElement name="CardBonusRow" class="shopping-building-card__bonus-row">
+                <ui:VisualElement name="CardBonusIcon" class="shopping-building-card__bonus-icon"/>
+                <ui:Label name="CardBonusText" text="+1" class="shopping-building-card__bonus-text"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="CardImage" class="shopping-building-card__image"/>
+            <ui:VisualElement name="CardFooter" class="shopping-building-card__footer">
+                <ui:Button name="PurchaseButton" class="shopping-purchase-button">
+                    <ui:VisualElement name="PurchaseButtonIcon" class="shopping-purchase-button__icon"/>
+                    <ui:Label name="PurchaseButtonLabel" text="200" class="shopping-purchase-button__label"/>
+                </ui:Button>
+                <ui:VisualElement name="LockedState" class="shopping-building-card__locked-state">
+                    <ui:VisualElement name="LockedStateIcon" class="shopping-building-card__locked-icon"/>
+                    <ui:Label name="LockedStateLabel" text="Coming&#10;soon" class="shopping-building-card__locked-label"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

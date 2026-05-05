@@ -13,7 +13,7 @@
     width: 313px;
     height: 232px;
     justify-content: center;
-    background-image: url("project://database/Assets/_Project/art/Img_bg_Buildings.png?fileID=2800000&guid=1c3a82bcb398dea4e930b1d2d6b1a760&type=3#Img_bg_Buildings");
+    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/Img_bg_Buildings.png?fileID=2800000&guid=1c3a82bcb398dea4e930b1d2d6b1a760&type=3#Img_bg_Buildings");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     -unity-background-scale-mode: stretch-to-fill;
@@ -34,7 +34,7 @@
     height: 66px;
     align-items: center;
     justify-content: center;
-    background-image: url("project://database/Assets/_Project/art/bg_text.png?fileID=2800000&guid=91336a7c702930f48b108c78661be524&type=3#bg_text");
+    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/bg_text.png?fileID=2800000&guid=91336a7c702930f48b108c78661be524&type=3#bg_text");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     -unity-background-scale-mode: stretch-to-fill;
@@ -44,7 +44,6 @@
     margin-top: 10px;
     font-size: 28px;
     -unity-font-style: bold;
-    color: rgb(108, 62, 45);
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/Baloo-Regular.ttf?fileID=12800000&guid=df6fae99ef3376f4ba0c6157fc122b52&type=3#Baloo-Regular");
+    color: var(--shopping-text-dark);
     -unity-text-align: middle-center;
 }

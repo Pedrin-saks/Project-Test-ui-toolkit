@@ -1,0 +1,140 @@
+.shopping-screen {
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url("project://database/Assets/_Project/art/Background.png?fileID=2800000&guid=8f1fb991d00f14841a4bb1cd65aade40&type=3#Background");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.shopping-screen__hud {
+    width: 100%;
+    padding-top: 0%;
+    padding-right: 4.4%;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.shopping-screen__hud-row {
+    flex-direction: row;
+}
+
+.shopping-screen__currency-capsule {
+    width: 268px;
+    min-width: 240px;
+    max-width: 272px;
+    height: 74px;
+    margin-left: 22px;
+    padding-left: 12px;
+    padding-right: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url("project://database/Assets/_Project/art/Bg_capsule.png?fileID=2800000&guid=068b26eae6b37824e885060c20ea0204&type=3#Bg_capsule");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.shopping-screen__currency-icon {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    margin-left: -18px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.shopping-screen__currency-icon--cash {
+    width: 74px;
+    background-image: url("project://database/Assets/_Project/art/Icon_hud_money.png?fileID=2800000&guid=c1081e65cdaac3342bb9168f144d8b2d&type=3#Icon_hud_money");
+}
+
+.shopping-screen__currency-icon--coin {
+    background-image: url("project://database/Assets/_Project/art/Icon_hud_Coin.png?fileID=2800000&guid=3cbcea55b2c9381428b32d497ed95d5e&type=3#Icon_hud_Coin");
+}
+
+.shopping-screen__currency-value {
+    flex-grow: 1;
+    -unity-text-align: middle-center;
+    font-size: 28px;
+    -unity-font-style: bold;
+    color: var(--shopping-text-dark);
+}
+
+.shopping-screen__currency-add-button {
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url("project://database/Assets/_Project/art/Icon_add.png?fileID=2800000&guid=0634abe1a513c5841b8928e4fd7eb3d2&type=3#Icon_add");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.shopping-screen__panel {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("project://database/Assets/_Project/art/Painel_1.png?fileID=2800000&guid=26270dc7f0be1c440925053e0e76186f&type=3#Painel_1");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.shopping-screen__header {
+    height: 120px;
+    padding-left: 38px;
+    padding-right: 34px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url("project://database/Assets/_Project/art/Top_Bar.png?fileID=2800000&guid=8b033a12654eacd48ad3b0bcaa9cd1c6&type=3#Top_Bar");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.shopping-screen__title {
+    flex-grow: 1;
+    -unity-text-align: middle-center;
+    font-size: 60px;
+    -unity-font-style: bold;
+    color: rgb(248, 238, 205);
+    -unity-text-outline-color: var(--shopping-outline-brown);
+    -unity-text-outline-width: 2px;
+    text-shadow: 2px 5px 0 rgb(101, 49, 35);
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/Baloo-Regular.ttf?fileID=12800000&guid=df6fae99ef3376f4ba0c6157fc122b52&type=3#Baloo-Regular");
+}
+
+.shopping-screen__icon-button {
+    width: 68px;
+    height: 68px;
+    padding: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    background-color: rgba(255, 255, 255, 0);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.shopping-screen__icon-button--back {
+    background-image: url("project://database/Assets/_Project/art/btn_back.png?fileID=2800000&guid=8d056a93d9555df458999d4ec78eba49&type=3#btn_back");
+}
+
+.shopping-screen__icon-button--close {
+    background-image: url("project://database/Assets/_Project/art/x.png?fileID=2800000&guid=b7a5a7032aa614347a348cf08ef53a59&type=3#x");
+}
+
+.shopping-screen__body {
+    flex-grow: 1;
+}

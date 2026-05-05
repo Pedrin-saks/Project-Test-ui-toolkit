@@ -1,0 +1,25 @@
+.shopping-categories__panel {
+    width: 63.5%;
+    height: 69.2%;
+    min-width: 920px;
+    min-height: 620px;
+    max-width: 1240px;
+    max-height: 760px;
+}
+
+.shopping-categories__content {
+    flex-grow: 1;
+    padding-top: 25px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
+
+.shopping-categories__grid {
+    flex-grow: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}

@@ -1,0 +1,16 @@
+:root {
+    --shopping-text-dark: rgb(108, 62, 45);
+    --shopping-text-light: rgb(248, 238, 205);
+    --shopping-outline-brown: rgba(101, 49, 35, 0.92);
+    --shopping-outline-green: rgba(72, 107, 34, 0.9);
+}
+
+.shopping-screen,
+.shopping-category-card,
+.shopping-building-card {
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/Baloo-Regular.ttf?fileID=12800000&guid=df6fae99ef3376f4ba0c6157fc122b52&type=3#Baloo-Regular");
+}
+
+.is-hidden {
+    display: none;
+}

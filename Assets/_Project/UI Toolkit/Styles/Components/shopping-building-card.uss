@@ -1,0 +1,168 @@
+.shopping-building-card {
+    width: 332px;
+    min-width: 332px;
+    max-width: 332px;
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
+}
+
+.shopping-building-card__frame {
+    width: 337px;
+    height: 500px;
+    padding-right: 22px;
+    padding-bottom: 20px;
+    padding-left: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/bg_building2.png?fileID=2800000&guid=a82c1f4dbb8291f4b9bd37281bdf93eb&type=3#bg_building2");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.shopping-building-card__title-bar {
+    height: 72px;
+    margin-right: -22px;
+    margin-left: -22px;
+    padding-bottom: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-building-card__title-bar--featured {
+    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/barTopItem.png?fileID=2800000&guid=883750c9ca30c6d4797bb8a38efec872&type=3#barTopItem");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.shopping-building-card__title {
+    font-size: 35px;
+    -unity-font-style: bold;
+    color: var(--shopping-text-dark);
+    -unity-text-align: middle-center;
+}
+
+.shopping-building-card__title--featured {
+    color: var(--shopping-text-light);
+}
+
+.shopping-building-card__title--locked {
+    color: rgba(139, 120, 86, 0.95);
+}
+
+.shopping-building-card__title--featured.shopping-building-card__title--locked {
+    color: rgba(214, 196, 152, 0.95);
+}
+
+.shopping-building-card__divider {
+    height: 2px;
+    margin-bottom: 14px;
+    background-color: rgba(154, 126, 89, 0.35);
+}
+
+.shopping-building-card__bonus-row {
+    height: 34px;
+    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.shopping-building-card__bonus-icon {
+    width: 28px;
+    height: 24px;
+    margin-right: 8px;
+    background-image: url("project://database/Assets/_Project/teste/Test%20Assets/Test%20Assets/Icon_Population.png?fileID=2800000&guid=10221f3e0f3e0d7419ad2aea022436f2&type=3#Icon_Population");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.shopping-building-card__bonus-text {
+    font-size: 22px;
+    -unity-font-style: bold;
+    color: rgb(150, 97, 61);
+}
+
+.shopping-building-card__image {
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.shopping-building-card__image--locked {
+    opacity: 0.48;
+}
+
+.shopping-building-card__footer {
+    min-height: 78px;
+    justify-content: flex-end;
+}
+
+.shopping-purchase-button {
+    height: 76px;
+    padding-left: 22px;
+    padding-right: 22px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/Btn_green.png?fileID=2800000&guid=668f04043b936874aa36e592c60ad498&type=3#Btn_green");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.shopping-purchase-button__icon {
+    width: 34px;
+    height: 34px;
+    margin-right: 10px;
+    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/Icon_hud_Coin.png?fileID=2800000&guid=3cbcea55b2c9381428b32d497ed95d5e&type=3#Icon_hud_Coin");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.shopping-purchase-button__label {
+    font-size: 28px;
+    -unity-font-style: bold;
+    color: var(--shopping-text-light);
+    -unity-text-outline-color: var(--shopping-outline-green);
+    -unity-text-outline-width: 4px;
+}
+
+.shopping-building-card__locked-state {
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.shopping-building-card__locked-icon {
+    width: 36px;
+    height: 48px;
+    margin-right: 12px;
+    background-image: url("project://database/Assets/_Project/teste/Test%20Assets/Test%20Assets/Icon_Lock.png?fileID=2800000&guid=30cb8077aec22f4418851f6bc665fb98&type=3#Icon_Lock");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.shopping-building-card__locked-label {
+    font-size: 22px;
+    -unity-font-style: bold;
+    color: rgb(121, 79, 56);
+    -unity-text-align: middle-left;
+}
+
+.shopping-building-card--locked {
+    opacity: 0.74;
+}
