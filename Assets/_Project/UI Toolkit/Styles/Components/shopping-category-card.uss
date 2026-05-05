@@ -1,19 +1,25 @@
 .shopping-category-card {
     width: 313px;
+    min-width: 280px;
+    max-width: 313px;
     height: 232px;
+    min-height: 208px;
+    max-height: 232px;
+    flex-grow: 0;
+    flex-shrink: 1;
     justify-content: center;
     align-items: center;
-    margin-top: 12px;
-    margin-right: 17px;
-    margin-bottom: 12px;
-    margin-left: 17px;
+    margin-top: 10px;
+    margin-right: 0;
+    margin-bottom: 22px;
+    margin-left: 0;
 }
 
 .shopping-category-card__frame {
-    width: 313px;
-    height: 232px;
+    width: 100%;
+    height: 100%;
     justify-content: center;
-    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/Img_bg_Buildings.png?fileID=2800000&guid=1c3a82bcb398dea4e930b1d2d6b1a760&type=3#Img_bg_Buildings");
+    background-image: url("project://database/Assets/_Project/art/Img_bg_Buildings.png?fileID=2800000&guid=1c3a82bcb398dea4e930b1d2d6b1a760&type=3#Img_bg_Buildings");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     -unity-background-scale-mode: stretch-to-fill;
@@ -21,27 +27,29 @@
 
 .shopping-category-card__icon {
     position: absolute;
-    left: 25px;
-    right: 25px;
-    top: 22px;
-    height: 80%;
+    left: 8%;
+    right: 8%;
+    top: 9%;
+    height: 76%;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 .shopping-category-card__title-band {
-    height: 66px;
+    min-height: 40px;
+    max-height: 66px;
+    height: 28%;
     align-items: center;
     justify-content: center;
-    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/bg_text.png?fileID=2800000&guid=91336a7c702930f48b108c78661be524&type=3#bg_text");
+    background-image: url("project://database/Assets/_Project/art/bg_text.png?fileID=2800000&guid=91336a7c702930f48b108c78661be524&type=3#bg_text");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     -unity-background-scale-mode: stretch-to-fill;
 }
 
 .shopping-category-card__title {
-    margin-top: 10px;
+    margin-top: 6px;
     font-size: 28px;
     -unity-font-style: bold;
     color: var(--shopping-text-dark);

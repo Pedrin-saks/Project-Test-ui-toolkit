@@ -104,7 +104,6 @@
     min-height: 78px;
     justify-content: flex-end;
     position: relative;
-    z-index: 2;
 }
 
 .shopping-building-card__locked-overlay {
@@ -115,7 +114,6 @@
     bottom: 0;
     display: none;
     background-color: rgba(231, 219, 183, 0.38);
-    z-index: 1;
 }
 
 .shopping-purchase-button {
@@ -161,7 +159,6 @@
     justify-content: center;
     display: none;
     position: relative;
-    z-index: 2;
 }
 
 .shopping-building-card__locked-icon {

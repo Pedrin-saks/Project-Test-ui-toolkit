@@ -28,11 +28,14 @@ namespace Enaldinho.UI
         private Button _closeButton;
         private Button _softCurrencyAddButton;
         private Button _premiumCurrencyAddButton;
+        private ScrollView _categoryScrollView;
         private VisualElement _categoryGrid;
+        private VisualElement _categoryScrollViewport;
         private VisualElement _buildingsRow;
 
         private List<ShopCategoryDataSO> _categories;
         private ShopCategoryDataSO _selectedCategory;
+        private bool _isCategoryScrollEnabled;
 
         protected override void InitializeUIElements()
         {
@@ -87,7 +90,9 @@ namespace Enaldinho.UI
             _screenTitle = root.Q<Label>("ScreenTitle");
             _backButton = root.Q<Button>("BackButton");
             _closeButton = root.Q<Button>("CloseButton");
+            _categoryScrollView = root.Q<ScrollView>("PanelContent");
             _categoryGrid = root.Q<VisualElement>("CategoriesGrid");
+            _categoryScrollViewport = _categoryScrollView?.Q<VisualElement>(className: ScrollView.viewportUssClassName);
             _softCurrencyValue = null;
             _premiumCurrencyValue = null;
             _softCurrencyAddButton = null;
@@ -109,7 +114,15 @@ namespace Enaldinho.UI
                 return;
             }
 
+            BindCategoryScrollCallbacks();
             PopulateCategories();
+            ScheduleCategoryScrollStateRefresh();
+
+            if (_categoryScrollView != null)
+            {
+                _categoryScrollView.touchScrollBehavior = ScrollView.TouchScrollBehavior.Clamped;
+                _categoryScrollView.elasticity = 0f;
+            }
         }
 
         private void ShowItemsDocument(ShopCategoryDataSO category)
@@ -126,7 +139,9 @@ namespace Enaldinho.UI
             _softCurrencyAddButton = root.Q<Button>("SoftCurrencyAddButton");
             _premiumCurrencyAddButton = root.Q<Button>("PremiumCurrencyAddButton");
             _buildingsRow = root.Q<VisualElement>("BuildingsRow");
+            _categoryScrollView = null;
             _categoryGrid = null;
+            _categoryScrollViewport = null;
 
             if (_screenTitle != null)
                 _screenTitle.text = category.DisplayName.ToUpperInvariant();
@@ -170,6 +185,8 @@ namespace Enaldinho.UI
 
         private void UnbindCurrentCallbacks()
         {
+            UnbindCategoryScrollCallbacks();
+
             if (_backButton != null)
                 _backButton.clicked -= HandleBackPressed;
 
@@ -196,6 +213,8 @@ namespace Enaldinho.UI
                 ShopCategoryDataSO category = _categories[i];
                 _categoryGrid.Add(CreateCategoryCard(category));
             }
+
+            ScheduleCategoryScrollStateRefresh();
         }
 
         private VisualElement CreateCategoryCard(ShopCategoryDataSO category)
@@ -347,6 +366,125 @@ namespace Enaldinho.UI
         private void HandlePremiumCurrencyAddPressed()
         {
             Debug.Log("Mock add premium currency");
+        }
+
+        private void BindCategoryScrollCallbacks()
+        {
+            if (_categoryScrollView != null)
+                _categoryScrollView.RegisterCallback<GeometryChangedEvent>(HandleCategoryScrollGeometryChanged);
+
+            if (_categoryGrid != null)
+                _categoryGrid.RegisterCallback<GeometryChangedEvent>(HandleCategoryScrollGeometryChanged);
+
+            if (_categoryScrollViewport == null)
+                return;
+
+            _categoryScrollViewport.RegisterCallback<PointerDownEvent>(HandleCategoryScrollPointerDown, TrickleDown.TrickleDown);
+            _categoryScrollViewport.RegisterCallback<PointerMoveEvent>(HandleCategoryScrollPointerMove, TrickleDown.TrickleDown);
+            _categoryScrollViewport.RegisterCallback<PointerUpEvent>(HandleCategoryScrollPointerUp, TrickleDown.TrickleDown);
+            _categoryScrollViewport.RegisterCallback<MouseMoveEvent>(HandleCategoryScrollMouseMove, TrickleDown.TrickleDown);
+        }
+
+        private void UnbindCategoryScrollCallbacks()
+        {
+            if (_categoryScrollView != null)
+                _categoryScrollView.UnregisterCallback<GeometryChangedEvent>(HandleCategoryScrollGeometryChanged);
+
+            if (_categoryGrid != null)
+                _categoryGrid.UnregisterCallback<GeometryChangedEvent>(HandleCategoryScrollGeometryChanged);
+
+            if (_categoryScrollViewport == null)
+                return;
+
+            _categoryScrollViewport.UnregisterCallback<PointerDownEvent>(HandleCategoryScrollPointerDown, TrickleDown.TrickleDown);
+            _categoryScrollViewport.UnregisterCallback<PointerMoveEvent>(HandleCategoryScrollPointerMove, TrickleDown.TrickleDown);
+            _categoryScrollViewport.UnregisterCallback<PointerUpEvent>(HandleCategoryScrollPointerUp, TrickleDown.TrickleDown);
+            _categoryScrollViewport.UnregisterCallback<MouseMoveEvent>(HandleCategoryScrollMouseMove, TrickleDown.TrickleDown);
+        }
+
+        private void HandleCategoryScrollGeometryChanged(GeometryChangedEvent evt)
+        {
+            RefreshCategoryScrollState();
+        }
+
+        private void HandleCategoryScrollPointerDown(PointerDownEvent evt)
+        {
+            if (_isCategoryScrollEnabled)
+                return;
+
+            ForceCategoryScrollLocked();
+        }
+
+        private void HandleCategoryScrollPointerMove(PointerMoveEvent evt)
+        {
+            if (_isCategoryScrollEnabled || evt.pressedButtons == 0)
+                return;
+
+            ForceCategoryScrollLocked();
+            evt.StopImmediatePropagation();
+        }
+
+        private void HandleCategoryScrollPointerUp(PointerUpEvent evt)
+        {
+            if (_isCategoryScrollEnabled)
+                return;
+
+            ForceCategoryScrollLocked();
+        }
+
+        private void HandleCategoryScrollMouseMove(MouseMoveEvent evt)
+        {
+            if (_isCategoryScrollEnabled || evt.pressedButtons == 0)
+                return;
+
+            ForceCategoryScrollLocked();
+            evt.StopImmediatePropagation();
+        }
+
+        private void ScheduleCategoryScrollStateRefresh()
+        {
+            if (_categoryScrollView == null)
+                return;
+
+            _categoryScrollView.schedule.Execute(RefreshCategoryScrollState);
+        }
+
+        private void RefreshCategoryScrollState()
+        {
+            if (_categoryScrollView == null || _categoryGrid == null)
+                return;
+
+            float viewportHeight = _categoryScrollViewport?.layout.height ?? _categoryScrollView.layout.height;
+            float contentHeight = _categoryGrid.layout.height;
+
+            if (viewportHeight <= 0f || contentHeight <= 0f)
+                return;
+
+            bool hasVerticalOverflow = contentHeight > viewportHeight + 0.5f;
+            _isCategoryScrollEnabled = hasVerticalOverflow;
+
+            _categoryScrollView.verticalScroller.SetEnabled(hasVerticalOverflow);
+            _categoryScrollView.touchScrollBehavior = hasVerticalOverflow
+                ? ScrollView.TouchScrollBehavior.Elastic
+                : ScrollView.TouchScrollBehavior.Clamped;
+            _categoryScrollView.elasticity = hasVerticalOverflow ? 0.1f : 0f;
+            _categoryScrollView.scrollDecelerationRate = hasVerticalOverflow ? 0.135f : 0f;
+
+            if (!hasVerticalOverflow)
+                ForceCategoryScrollLocked();
+        }
+
+        private void ForceCategoryScrollLocked()
+        {
+            if (_categoryScrollView == null)
+                return;
+
+            _categoryScrollView.scrollOffset = Vector2.zero;
+            _categoryScrollView.schedule.Execute(() =>
+            {
+                if (!_isCategoryScrollEnabled && _categoryScrollView != null)
+                    _categoryScrollView.scrollOffset = Vector2.zero;
+            });
         }
     }
 }

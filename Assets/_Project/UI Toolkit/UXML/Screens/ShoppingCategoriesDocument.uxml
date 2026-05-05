@@ -10,12 +10,16 @@
                 <ui:Label text="BUILDINGS" name="ScreenTitle" class="shopping-screen__title"/>
                 <ui:Button name="CloseButton" class="shopping-screen__icon-button shopping-screen__icon-button--close"/>
             </ui:VisualElement>
-            <ui:VisualElement name="PanelContent" class="shopping-screen__body shopping-categories__content">
+            <ui:ScrollView name="PanelContent" mode="Vertical" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Auto" class="shopping-screen__body shopping-categories__content shopping-categories__scroll">
                 <ui:VisualElement name="CategoriesGrid" class="shopping-categories__grid">
                     <ui:Instance template="ShopCategoryCard"/>
                     <ui:Instance template="ShopCategoryCard"/>
+                    <ui:Instance template="ShopCategoryCard"/>
+                    <ui:Instance template="ShopCategoryCard"/>
+                    <ui:Instance template="ShopCategoryCard"/>
+                    <ui:Instance template="ShopCategoryCard"/>
                 </ui:VisualElement>
-            </ui:VisualElement>
+            </ui:ScrollView>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
