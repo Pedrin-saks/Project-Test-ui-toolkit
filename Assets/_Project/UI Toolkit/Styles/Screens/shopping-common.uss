@@ -28,7 +28,7 @@
     min-width: 240px;
     max-width: 272px;
     height: 74px;
-    margin-left: 22px;
+    margin-left: 0;
     padding-left: 12px;
     padding-right: 10px;
     flex-direction: row;
@@ -39,22 +39,34 @@
     background-size: contain;
 }
 
+#SoftCurrencyCapsule {
+    margin-left: 0;
+}
+
+#PremiumCurrencyCapsule {
+    margin-left: 24px;
+}
+
 .shopping-screen__currency-icon {
-    width: 62px;
-    height: 62px;
+    width: 64px;
+    height: 64px;
     flex-shrink: 0;
-    margin-left: -18px;
+    margin-left: -16px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 .shopping-screen__currency-icon--cash {
-    width: 74px;
+    width: 82px;
+    height: 72px;
+    margin-left: -20px;
     background-image: url("project://database/Assets/_Project/art/Icon_hud_money.png?fileID=2800000&guid=c1081e65cdaac3342bb9168f144d8b2d&type=3#Icon_hud_money");
 }
 
 .shopping-screen__currency-icon--coin {
+    width: 68px;
+    height: 68px;
     background-image: url("project://database/Assets/_Project/art/Icon_hud_Coin.png?fileID=2800000&guid=3cbcea55b2c9381428b32d497ed95d5e&type=3#Icon_hud_Coin");
 }
 

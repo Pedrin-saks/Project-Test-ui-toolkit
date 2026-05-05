@@ -1,3 +1,13 @@
+.shopping-building-card-host {
+    width: 332px;
+    min-width: 332px;
+    max-width: 332px;
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
+    flex-shrink: 0;
+}
+
 .shopping-building-card {
     width: 332px;
     min-width: 332px;
@@ -9,11 +19,11 @@
 
 .shopping-building-card__frame {
     position: relative;
-    width: 337px;
-    height: 500px;
-    padding-right: 22px;
-    padding-bottom: 20px;
-    padding-left: 22px;
+    width: 100%;
+    height: 100%;
+    padding-right: 18px;
+    padding-bottom: 16px;
+    padding-left: 18px;
     flex-direction: column;
     justify-content: space-between;
     background-image: url("project://database/Assets/_Project/art/bg_building2.png?fileID=2800000&guid=a82c1f4dbb8291f4b9bd37281bdf93eb&type=3#bg_building2");
@@ -23,10 +33,12 @@
 }
 
 .shopping-building-card__title-bar {
-    height: 72px;
-    margin-right: -22px;
-    margin-left: -22px;
-    padding-bottom: 8px;
+    min-height: 58px;
+    max-height: 72px;
+    height: 14%;
+    margin-right: -18px;
+    margin-left: -18px;
+    padding-bottom: 6px;
     align-items: center;
     justify-content: center;
 }
@@ -39,7 +51,7 @@
 }
 
 .shopping-building-card__title {
-    font-size: 35px;
+    font-size: 30px;
     -unity-font-style: bold;
     color: var(--shopping-text-dark);
     -unity-text-align: middle-center;
@@ -59,21 +71,23 @@
 
 .shopping-building-card__divider {
     height: 2px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     background-color: rgba(154, 126, 89, 0.35);
 }
 
 .shopping-building-card__bonus-row {
-    height: 40px;
-    margin-bottom: 10px;
+    min-height: 28px;
+    max-height: 40px;
+    height: 8%;
+    margin-bottom: 8px;
     flex-direction: row;
     align-items: center;
 }
 
 .shopping-building-card__bonus-icon {
-    width: 32px;
-    height: 28px;
-    margin-right: 10px;
+    width: 28px;
+    height: 24px;
+    margin-right: 8px;
     background-image: url("project://database/Assets/_Project/art/IconMan.png?fileID=2800000&guid=3f46828451ce8e345a59a2773697757f&type=3#IconMan");
     background-repeat: no-repeat;
     background-size: contain;
@@ -81,7 +95,7 @@
 }
 
 .shopping-building-card__bonus-text {
-    font-size: 25px;
+    font-size: 22px;
     -unity-font-style: bold;
     color: rgb(150, 97, 61);
     -unity-text-align: middle-left;
@@ -89,8 +103,8 @@
 
 .shopping-building-card__image {
     flex-grow: 1;
-    margin-top: 10px;
-    margin-bottom: 16px;
+    margin-top: 6px;
+    margin-bottom: 12px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -101,7 +115,9 @@
 }
 
 .shopping-building-card__footer {
-    min-height: 78px;
+    min-height: 64px;
+    max-height: 78px;
+    height: 16%;
     justify-content: flex-end;
     position: relative;
 }
@@ -117,9 +133,11 @@
 }
 
 .shopping-purchase-button {
-    height: 76px;
-    padding-left: 22px;
-    padding-right: 22px;
+    min-height: 60px;
+    max-height: 76px;
+    height: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -134,9 +152,9 @@
 }
 
 .shopping-purchase-button__icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+    width: 34px;
+    height: 34px;
+    margin-right: 8px;
     background-image: url("project://database/Assets/_Project/art/Icon_hud_Coin.png?fileID=2800000&guid=3cbcea55b2c9381428b32d497ed95d5e&type=3#Icon_hud_Coin");
     background-repeat: no-repeat;
     background-size: contain;
@@ -144,7 +162,7 @@
 }
 
 .shopping-purchase-button__label {
-    font-size: 40px;
+    font-size: 34px;
     -unity-font-style: bold;
     color: var(--shopping-text-light);
     -unity-text-outline-color: var(--shopping-outline-green);
@@ -162,9 +180,9 @@
 }
 
 .shopping-building-card__locked-icon {
-    width: 36px;
-    height: 48px;
-    margin-right: 12px;
+    width: 32px;
+    height: 42px;
+    margin-right: 10px;
     background-image: url("project://database/Assets/_Project/art/padlock.png?fileID=2800000&guid=d5e8c826b7dd0994aa90c504492680b0&type=3#padlock");
     background-repeat: no-repeat;
     background-size: contain;
@@ -172,7 +190,7 @@
 }
 
 .shopping-building-card__locked-label {
-    font-size: 22px;
+    font-size: 20px;
     -unity-font-style: bold;
     color: rgb(121, 79, 56);
     -unity-text-align: middle-left;
@@ -180,4 +198,54 @@
 
 .shopping-building-card--locked .shopping-building-card__locked-overlay {
     display: flex;
+}
+
+.shopping-building-card-host--compact {
+    width: 272px;
+    min-width: 272px;
+    max-width: 272px;
+    height: 368px;
+    min-height: 368px;
+    max-height: 368px;
+}
+
+.shopping-building-card--compact {
+    width: 272px;
+    min-width: 272px;
+    max-width: 272px;
+    height: 368px;
+    min-height: 368px;
+    max-height: 368px;
+}
+
+.shopping-building-card--compact .shopping-building-card__title {
+    font-size: 24px;
+}
+
+.shopping-building-card--compact .shopping-building-card__bonus-text {
+    font-size: 18px;
+}
+
+.shopping-building-card--compact .shopping-purchase-button__label {
+    font-size: 26px;
+}
+
+.shopping-building-card--compact .shopping-building-card__locked-label {
+    font-size: 16px;
+}
+
+.shopping-building-card--compact .shopping-building-card__footer {
+    min-height: 56px;
+    max-height: 68px;
+    height: 15%;
+}
+
+.shopping-building-card--compact .shopping-purchase-button {
+    min-height: 54px;
+    max-height: 68px;
+}
+
+.shopping-building-card--compact .shopping-purchase-button__icon {
+    width: 26px;
+    height: 26px;
 }

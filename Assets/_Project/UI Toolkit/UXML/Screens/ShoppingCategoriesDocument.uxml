@@ -1,5 +1,4 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="ShopCategoryCard" src="project://database/Assets/_Project/UI%20Toolkit/UXML/Components/ShopCategoryCard.uxml?fileID=9197481963319205126&amp;guid=09a3685311c7a86488283f54815768f1&amp;type=3#ShopCategoryCard"/>
     <Style src="project://database/Assets/_Project/UI%20Toolkit/Styles/Foundations/shopping-theme.uss?fileID=7433441132597879392&amp;guid=3bc091a4338cf6f4988ef16d9f8ed7a5&amp;type=3#shopping-theme"/>
     <Style src="project://database/Assets/_Project/UI%20Toolkit/Styles/Screens/shopping-common.uss?fileID=7433441132597879392&amp;guid=5e0f72610aa746243aa92df961e632ef&amp;type=3#shopping-common"/>
     <Style src="project://database/Assets/_Project/UI%20Toolkit/Styles/Screens/shopping-categories.uss?fileID=7433441132597879392&amp;guid=60c61daf2bdbcef4b8619ae1943b4c88&amp;type=3#shopping-categories"/>
@@ -11,14 +10,7 @@
                 <ui:Button name="CloseButton" class="shopping-screen__icon-button shopping-screen__icon-button--close"/>
             </ui:VisualElement>
             <ui:ScrollView name="PanelContent" mode="Vertical" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Auto" class="shopping-screen__body shopping-categories__content shopping-categories__scroll">
-                <ui:VisualElement name="CategoriesGrid" class="shopping-categories__grid">
-                    <ui:Instance template="ShopCategoryCard"/>
-                    <ui:Instance template="ShopCategoryCard"/>
-                    <ui:Instance template="ShopCategoryCard"/>
-                    <ui:Instance template="ShopCategoryCard"/>
-                    <ui:Instance template="ShopCategoryCard"/>
-                    <ui:Instance template="ShopCategoryCard"/>
-                </ui:VisualElement>
+                <ui:VisualElement name="CategoriesGrid" class="shopping-categories__grid"/>
             </ui:ScrollView>
         </ui:VisualElement>
     </ui:VisualElement>

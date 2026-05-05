@@ -1,16 +1,32 @@
+.shopping-items-screen {
+    justify-content: center;
+    align-items: center;
+}
+
+.shopping-items__hud {
+    position: absolute;
+    top: 2.2%;
+    left: 0;
+    right: 4.4%;
+    width: auto;
+    padding-top: 0;
+    margin-bottom: 0;
+    justify-content: flex-end;
+}
+
 .shopping-items__panel {
     width: 92.3%;
     height: 74.1%;
-    min-width: 960px;
-    min-height: 620px;
+    min-width: 280px;
+    min-height: 320px;
     max-width: 1772px;
     max-height: 800px;
 }
 
 .shopping-items__body {
-    padding-top: 24px;
+    padding-top: 16px;
     padding-right: 42px;
-    padding-bottom: 24px;
+    padding-bottom: 16px;
     padding-left: 42px;
 }
 
@@ -19,7 +35,7 @@
 }
 
 .shopping-items__scroll > .unity-scroll-view__horizontal-scroller {
-    height: 50px;
+    height: 42px;
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
@@ -86,6 +102,6 @@
     align-items: flex-start;
     padding-top: 2px;
     padding-right: 8px;
-    padding-bottom: 20px;
+    padding-bottom: 4px;
     padding-left: 8px;
 }

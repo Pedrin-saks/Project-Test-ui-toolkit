@@ -8,7 +8,7 @@ namespace Enaldinho.UI
     public class ShopScreenController : UIScreenBase
     {
         private const string CategoriesTitle = "BUILDINGS";
-
+        private const float BuildingCardCompactBreakpoint = 490f;
         [Header("Data")]
         [SerializeField] private ShopDatabaseSO database;
         [Header("Documents")]
@@ -29,9 +29,11 @@ namespace Enaldinho.UI
         private Button _softCurrencyAddButton;
         private Button _premiumCurrencyAddButton;
         private ScrollView _categoryScrollView;
+        private ScrollView _buildingsScrollView;
         private VisualElement _categoryGrid;
         private VisualElement _categoryScrollViewport;
         private VisualElement _buildingsRow;
+        private VisualElement _buildingsScrollViewport;
 
         private List<ShopCategoryDataSO> _categories;
         private ShopCategoryDataSO _selectedCategory;
@@ -138,7 +140,9 @@ namespace Enaldinho.UI
             _premiumCurrencyValue = root.Q<Label>("PremiumCurrencyValue");
             _softCurrencyAddButton = root.Q<Button>("SoftCurrencyAddButton");
             _premiumCurrencyAddButton = root.Q<Button>("PremiumCurrencyAddButton");
+            _buildingsScrollView = root.Q<ScrollView>("BuildingsScrollView");
             _buildingsRow = root.Q<VisualElement>("BuildingsRow");
+            _buildingsScrollViewport = _buildingsScrollView?.Q<VisualElement>(className: ScrollView.viewportUssClassName);
             _categoryScrollView = null;
             _categoryGrid = null;
             _categoryScrollViewport = null;
@@ -160,6 +164,8 @@ namespace Enaldinho.UI
 
             if (_premiumCurrencyAddButton != null)
                 _premiumCurrencyAddButton.clicked += HandlePremiumCurrencyAddPressed;
+
+            BindBuildingLayoutCallbacks();
 
             if (_softCurrencyValue != null)
                 _softCurrencyValue.text = database.SoftCurrencyDisplay;
@@ -198,6 +204,8 @@ namespace Enaldinho.UI
 
             if (_premiumCurrencyAddButton != null)
                 _premiumCurrencyAddButton.clicked -= HandlePremiumCurrencyAddPressed;
+
+            UnbindBuildingLayoutCallbacks();
         }
 
         private void PopulateCategories()
@@ -257,11 +265,14 @@ namespace Enaldinho.UI
                 ShopBuildingDataSO building = buildings[i];
                 _buildingsRow.Add(CreateBuildingCard(building));
             }
+
+            ScheduleBuildingCardLayoutRefresh();
         }
 
         private VisualElement CreateBuildingCard(ShopBuildingDataSO building)
         {
             TemplateContainer cardTemplate = buildingCardAsset.CloneTree();
+            cardTemplate.AddToClassList("shopping-building-card-host");
             VisualElement cardRoot = cardTemplate.Q<VisualElement>("BuildingCard") ?? cardTemplate;
             VisualElement titleBar = cardRoot.Q<VisualElement>("CardTitleBar");
             Label title = cardRoot.Q<Label>("CardTitleLabel");
@@ -366,6 +377,58 @@ namespace Enaldinho.UI
         private void HandlePremiumCurrencyAddPressed()
         {
             Debug.Log("Mock add premium currency");
+        }
+
+        private void BindBuildingLayoutCallbacks()
+        {
+            if (_buildingsScrollView != null)
+                _buildingsScrollView.RegisterCallback<GeometryChangedEvent>(HandleBuildingLayoutGeometryChanged);
+
+            if (_buildingsScrollViewport != null)
+                _buildingsScrollViewport.RegisterCallback<GeometryChangedEvent>(HandleBuildingLayoutGeometryChanged);
+        }
+
+        private void UnbindBuildingLayoutCallbacks()
+        {
+            if (_buildingsScrollView != null)
+                _buildingsScrollView.UnregisterCallback<GeometryChangedEvent>(HandleBuildingLayoutGeometryChanged);
+
+            if (_buildingsScrollViewport != null)
+                _buildingsScrollViewport.UnregisterCallback<GeometryChangedEvent>(HandleBuildingLayoutGeometryChanged);
+        }
+
+        private void HandleBuildingLayoutGeometryChanged(GeometryChangedEvent evt)
+        {
+            RefreshBuildingCardLayout();
+        }
+
+        private void ScheduleBuildingCardLayoutRefresh()
+        {
+            if (_buildingsScrollView == null)
+                return;
+
+            _buildingsScrollView.schedule.Execute(RefreshBuildingCardLayout);
+        }
+
+        private void RefreshBuildingCardLayout()
+        {
+            if (_buildingsRow == null || _buildingsScrollView == null)
+                return;
+
+            float viewportHeight = _buildingsScrollViewport?.layout.height ?? _buildingsScrollView.layout.height;
+            if (viewportHeight <= 0f)
+                return;
+
+            bool isCompact = viewportHeight <= BuildingCardCompactBreakpoint;
+
+            foreach (VisualElement child in _buildingsRow.Children())
+            {
+                child.EnableInClassList("shopping-building-card-host--compact", isCompact);
+
+                VisualElement cardRoot = child.Q<VisualElement>("BuildingCard");
+                if (cardRoot != null)
+                    cardRoot.EnableInClassList("shopping-building-card--compact", isCompact);
+            }
         }
 
         private void BindCategoryScrollCallbacks()
