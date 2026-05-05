@@ -1,1 +1,91 @@
-.shopping-items__panel {}
+.shopping-items__panel {
+    width: 92.3%;
+    height: 74.1%;
+    min-width: 960px;
+    min-height: 620px;
+    max-width: 1772px;
+    max-height: 800px;
+}
+
+.shopping-items__body {
+    padding-top: 24px;
+    padding-right: 42px;
+    padding-bottom: 24px;
+    padding-left: 42px;
+}
+
+.shopping-items__scroll {
+    flex-grow: 1;
+}
+
+.shopping-items__scroll > .unity-scroll-view__horizontal-scroller {
+    height: 50px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-image: url("project://database/Assets/_Project/art/background_Scroll.png?fileID=2800000&guid=e40bee6c83000714797b30ce1a1d5a25&type=3#background_Scroll");
+    -unity-background-scale-mode: stretch-to-fill;
+    background-color: rgba(255, 255, 255, 0);
+    background-size: 97.5% 100%;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.shopping-items__scroll > .unity-scroll-view__horizontal-scroller .unity-scroller__slider {
+    height: 100%;
+}
+
+.shopping-items__scroll > .unity-scroll-view__horizontal-scroller .unity-base-slider__tracker {
+    height: 100%;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.shopping-items__scroll > .unity-scroll-view__horizontal-scroller .unity-base-slider__dragger {
+    min-width: 240px;
+    height: 90%;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-image: url("project://database/Assets/_Project/art/Bar_Scroll.png?fileID=2800000&guid=37057a0a891dbd74c97ae839b11718d7&type=3#Bar_Scroll");
+    -unity-background-scale-mode: stretch-to-fill;
+    background-color: rgba(255, 255, 255, 0);
+    -unity-slice-left: 15;
+    -unity-slice-top: 15;
+    -unity-slice-right: 15;
+    -unity-slice-bottom: 15;
+}
+
+.shopping-items__scroll > .unity-scroll-view__horizontal-scroller .unity-scroller__low-button,
+.shopping-items__scroll > .unity-scroll-view__horizontal-scroller .unity-scroller__high-button {
+    display: none;
+}
+
+.shopping-items__row {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 2px;
+    padding-right: 8px;
+    padding-bottom: 20px;
+    padding-left: 8px;
+}

@@ -1,0 +1,41 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="ShopBuildingCardTemplate" src="project://database/Assets/_Project/UI%20Toolkit/UXML/Components/ShopBuildingCard.uxml?fileID=9197481963319205126&amp;guid=aed30178656942a42b736e690f6adabc&amp;type=3#ShopBuildingCard"/>
+    <Style src="project://database/Assets/_Project/UI%20Toolkit/Styles/Foundations/shopping-theme.uss?fileID=7433441132597879392&amp;guid=3bc091a4338cf6f4988ef16d9f8ed7a5&amp;type=3#shopping-theme"/>
+    <Style src="project://database/Assets/_Project/UI%20Toolkit/Styles/Screens/shopping-common.uss?fileID=7433441132597879392&amp;guid=5e0f72610aa746243aa92df961e632ef&amp;type=3#shopping-common"/>
+    <Style src="project://database/Assets/_Project/UI%20Toolkit/Styles/Screens/shopping-items.uss?fileID=7433441132597879392&amp;guid=9719664a15db3134a9be76051c29f551&amp;type=3#shopping-items"/>
+    <ui:VisualElement name="Root" class="shopping-screen">
+        <ui:VisualElement name="TopHud" class="shopping-screen__hud">
+            <ui:VisualElement name="CurrencyRow" class="shopping-screen__hud-row">
+                <ui:VisualElement name="SoftCurrencyCapsule" class="shopping-screen__currency-capsule">
+                    <ui:VisualElement name="SoftCurrencyIcon" class="shopping-screen__currency-icon shopping-screen__currency-icon--cash"/>
+                    <ui:Label name="SoftCurrencyValue" text="120k" class="shopping-screen__currency-value"/>
+                    <ui:Button name="SoftCurrencyAddButton" class="shopping-screen__currency-add-button"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="PremiumCurrencyCapsule" class="shopping-screen__currency-capsule">
+                    <ui:VisualElement name="PremiumCurrencyIcon" class="shopping-screen__currency-icon shopping-screen__currency-icon--coin"/>
+                    <ui:Label name="PremiumCurrencyValue" text="120k" class="shopping-screen__currency-value"/>
+                    <ui:Button name="PremiumCurrencyAddButton" class="shopping-screen__currency-add-button"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Panel" class="shopping-screen__panel shopping-items__panel">
+            <ui:VisualElement name="PanelHeader" class="shopping-screen__header">
+                <ui:Button name="BackButton" class="shopping-screen__icon-button shopping-screen__icon-button--back"/>
+                <ui:Label name="ScreenTitle" text="COMMUNITY" class="shopping-screen__title"/>
+                <ui:Button name="CloseButton" class="shopping-screen__icon-button shopping-screen__icon-button--close"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="PanelBody" class="shopping-screen__body shopping-items__body">
+                <ui:ScrollView name="BuildingsScrollView" mode="Horizontal" horizontal-scroller-visibility="AlwaysVisible" vertical-scroller-visibility="Hidden" class="shopping-items__scroll">
+                    <ui:VisualElement name="BuildingsRow" class="shopping-items__row">
+                        <ui:Instance template="ShopBuildingCardTemplate"/>
+                        <ui:Instance template="ShopBuildingCardTemplate"/>
+                        <ui:Instance template="ShopBuildingCardTemplate"/>
+                        <ui:Instance template="ShopBuildingCardTemplate"/>
+                        <ui:Instance template="ShopBuildingCardTemplate"/>
+                        <ui:Instance template="ShopBuildingCardTemplate"/>
+                    </ui:VisualElement>
+                </ui:ScrollView>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
