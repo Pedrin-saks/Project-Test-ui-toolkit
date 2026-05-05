@@ -9,6 +9,8 @@ namespace Enaldinho.UI
         [SerializeField] private string displayName;
         [SerializeField] private int price;
         [SerializeField] private string bonusText;
+        [SerializeField] private Sprite iconSprite;
+        [SerializeField] private bool isFeatured;
         [SerializeField] private bool isLocked;
         [SerializeField] private string artClass;
 
@@ -16,6 +18,8 @@ namespace Enaldinho.UI
         public string DisplayName => displayName;
         public int Price => price;
         public string BonusText => bonusText;
+        public Sprite IconSprite => iconSprite;
+        public bool IsFeatured => isFeatured;
         public bool IsLocked => isLocked;
         public string ArtClass => artClass;
     }

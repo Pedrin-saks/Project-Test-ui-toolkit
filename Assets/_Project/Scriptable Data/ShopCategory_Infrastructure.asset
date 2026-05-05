@@ -17,6 +17,7 @@ MonoBehaviour:
   iconSprite: {fileID: 283542537357294086, guid: 41f0563a0d9329e44aecdaee6990310f, type: 3}
   artClass: art-community
   buildings:
-  - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}
+  - {fileID: 11400000, guid: 18c014795cfa3244591927face9a2a6c, type: 2}
   - {fileID: 11400000, guid: 6996df68b35d4b93af8a67a483777190, type: 2}
   - {fileID: 11400000, guid: 3f3d162618f44b9ba042817fda1fbd6b, type: 2}
+  - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}

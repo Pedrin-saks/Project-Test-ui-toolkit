@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fdfd0f23e46dbe488b594fc5e5826e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a0f520d771d4e8f94c38d0f98ec8de3, type: 3}
   m_Name: ShopBuilding_HorseStatue
   m_EditorClassIdentifier: Assembly-CSharp::Enaldinho.UI.ShopBuildingDataSO
   id: building_horse_statue
   displayName: Horse Statue
   price: 120
   bonusText: 
+  iconSprite: {fileID: 6567260226419756476, guid: 48248962b9821bb49825cc5520b62f75, type: 3}
+  isFeatured: 0
   isLocked: 0
   artClass: art-statue

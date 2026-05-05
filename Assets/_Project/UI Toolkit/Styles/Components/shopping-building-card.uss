@@ -8,6 +8,7 @@
 }
 
 .shopping-building-card__frame {
+    position: relative;
     width: 337px;
     height: 500px;
     padding-right: 22px;
@@ -15,7 +16,7 @@
     padding-left: 22px;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/bg_building2.png?fileID=2800000&guid=a82c1f4dbb8291f4b9bd37281bdf93eb&type=3#bg_building2");
+    background-image: url("project://database/Assets/_Project/art/bg_building2.png?fileID=2800000&guid=a82c1f4dbb8291f4b9bd37281bdf93eb&type=3#bg_building2");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     -unity-background-scale-mode: stretch-to-fill;
@@ -31,7 +32,7 @@
 }
 
 .shopping-building-card__title-bar--featured {
-    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/barTopItem.png?fileID=2800000&guid=883750c9ca30c6d4797bb8a38efec872&type=3#barTopItem");
+    background-image: url("project://database/Assets/_Project/art/barTopItem.png?fileID=2800000&guid=883750c9ca30c6d4797bb8a38efec872&type=3#barTopItem");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     -unity-background-scale-mode: stretch-to-fill;
@@ -63,26 +64,27 @@
 }
 
 .shopping-building-card__bonus-row {
-    height: 34px;
+    height: 40px;
     margin-bottom: 10px;
     flex-direction: row;
     align-items: center;
 }
 
 .shopping-building-card__bonus-icon {
-    width: 28px;
-    height: 24px;
-    margin-right: 8px;
-    background-image: url("project://database/Assets/_Project/teste/Test%20Assets/Test%20Assets/Icon_Population.png?fileID=2800000&guid=10221f3e0f3e0d7419ad2aea022436f2&type=3#Icon_Population");
+    width: 32px;
+    height: 28px;
+    margin-right: 10px;
+    background-image: url("project://database/Assets/_Project/art/IconMan.png?fileID=2800000&guid=3f46828451ce8e345a59a2773697757f&type=3#IconMan");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 .shopping-building-card__bonus-text {
-    font-size: 22px;
+    font-size: 25px;
     -unity-font-style: bold;
     color: rgb(150, 97, 61);
+    -unity-text-align: middle-left;
 }
 
 .shopping-building-card__image {
@@ -101,6 +103,19 @@
 .shopping-building-card__footer {
     min-height: 78px;
     justify-content: flex-end;
+    position: relative;
+    z-index: 2;
+}
+
+.shopping-building-card__locked-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color: rgba(231, 219, 183, 0.38);
+    z-index: 1;
 }
 
 .shopping-purchase-button {
@@ -115,27 +130,28 @@
     border-bottom-width: 0;
     border-left-width: 0;
     background-color: rgba(255, 255, 255, 0);
-    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/Btn_green.png?fileID=2800000&guid=668f04043b936874aa36e592c60ad498&type=3#Btn_green");
+    background-image: url("project://database/Assets/_Project/art/Btn_green.png?fileID=2800000&guid=668f04043b936874aa36e592c60ad498&type=3#Btn_green");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
 .shopping-purchase-button__icon {
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
-    background-image: url("project://database/Assets/_Project/teste/Art%20Ui/Icon_hud_Coin.png?fileID=2800000&guid=3cbcea55b2c9381428b32d497ed95d5e&type=3#Icon_hud_Coin");
+    background-image: url("project://database/Assets/_Project/art/Icon_hud_Coin.png?fileID=2800000&guid=3cbcea55b2c9381428b32d497ed95d5e&type=3#Icon_hud_Coin");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 .shopping-purchase-button__label {
-    font-size: 28px;
+    font-size: 40px;
     -unity-font-style: bold;
     color: var(--shopping-text-light);
     -unity-text-outline-color: var(--shopping-outline-green);
     -unity-text-outline-width: 4px;
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/Baloo-Regular.ttf?fileID=12800000&guid=df6fae99ef3376f4ba0c6157fc122b52&type=3#Baloo-Regular");
 }
 
 .shopping-building-card__locked-state {
@@ -144,13 +160,15 @@
     align-items: center;
     justify-content: center;
     display: none;
+    position: relative;
+    z-index: 2;
 }
 
 .shopping-building-card__locked-icon {
     width: 36px;
     height: 48px;
     margin-right: 12px;
-    background-image: url("project://database/Assets/_Project/teste/Test%20Assets/Test%20Assets/Icon_Lock.png?fileID=2800000&guid=30cb8077aec22f4418851f6bc665fb98&type=3#Icon_Lock");
+    background-image: url("project://database/Assets/_Project/art/padlock.png?fileID=2800000&guid=d5e8c826b7dd0994aa90c504492680b0&type=3#padlock");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -163,6 +181,6 @@
     -unity-text-align: middle-left;
 }
 
-.shopping-building-card--locked {
-    opacity: 0.74;
+.shopping-building-card--locked .shopping-building-card__locked-overlay {
+    display: flex;
 }

@@ -12,6 +12,7 @@
                 <ui:Label name="CardBonusText" text="+1" class="shopping-building-card__bonus-text"/>
             </ui:VisualElement>
             <ui:VisualElement name="CardImage" class="shopping-building-card__image"/>
+            <ui:VisualElement name="LockedOverlay" class="shopping-building-card__locked-overlay"/>
             <ui:VisualElement name="CardFooter" class="shopping-building-card__footer">
                 <ui:Button name="PurchaseButton" class="shopping-purchase-button">
                     <ui:VisualElement name="PurchaseButtonIcon" class="shopping-purchase-button__icon"/>

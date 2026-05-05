@@ -18,9 +18,9 @@ MonoBehaviour:
   artClass: art-house
   buildings:
   - {fileID: 11400000, guid: 133d4ec8d8f44cd68e07f2dcff27c041, type: 2}
-  - {fileID: 11400000, guid: 3f3d162618f44b9ba042817fda1fbd6b, type: 2}
-  - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}
-  - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}
+  - {fileID: 11400000, guid: b20ef5c1ce26e8144925bd1a560f7264, type: 2}
+  - {fileID: 11400000, guid: 6996df68b35d4b93af8a67a483777190, type: 2}
+  - {fileID: 11400000, guid: c4ff89f070e84d48b5b203703b022ed7, type: 2}
   - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}
   - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}
   - {fileID: 11400000, guid: 46d74df2cf874842865847ea30e7d7d0, type: 2}

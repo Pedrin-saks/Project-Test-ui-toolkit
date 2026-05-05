@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a0f520d771d4e8f94c38d0f98ec8de3, type: 3}
-  m_Name: ShopBuilding_School
+  m_Name: ShopBuilding_Hospital_locked
   m_EditorClassIdentifier: Assembly-CSharp::Enaldinho.UI.ShopBuildingDataSO
-  id: building_school
-  displayName: School
-  price: 200
+  id: building_hospital_locked
+  displayName: Hospital
+  price: 500
   bonusText: 
-  iconSprite: {fileID: 283542537357294086, guid: 41f0563a0d9329e44aecdaee6990310f, type: 3}
-  isFeatured: 1
-  isLocked: 0
-  artClass: art-school
+  iconSprite: {fileID: -867171867098561829, guid: 1391a68950adc8e4dbbf933a1e270502, type: 3}
+  isFeatured: 0
+  isLocked: 1
+  artClass: art-hospital
